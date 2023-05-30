@@ -22,8 +22,8 @@ jobs:
     - name: Checkin
       env:
         ONEPUSH: ${{ secrets.ONEPUSH }}
-        USER: ${{ secrets.USER }}
-        PWD: ${{ secrets.PWD }}
+        USERNAME: ${{ secrets.USERNAME }}
+        PASSWORD: ${{ secrets.PASSWORD }}
       run: |
         python Cloud189Checkin.py
 
