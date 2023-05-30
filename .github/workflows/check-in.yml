@@ -20,8 +20,8 @@ jobs:
         
     - name: Checkin
       run: |
-        user='${{ secrets.USER }}'
-        pwd='${{ secrets.PWD }}'
+        user='${{ secrets.ty_username }}'
+        pwd='${{ secrets.ty_password }}'
         
-        python checkin.py
+        python Cloud189Checkin.py
         done
