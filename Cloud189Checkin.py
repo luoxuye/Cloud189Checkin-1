@@ -264,4 +264,7 @@ if __name__ == "__main__":
     # 变量 USER（手机号）,PWD（密码）
     username = os.getenv("USER")
     password = os.getenv("PWD")
-    main(username, password)
+    print(username)
+    print(password)
+    print(ONEPUSH)
+    #main(username, password)
