@@ -259,9 +259,9 @@ def main(ty_username, ty_password):
 
 
 if __name__ == "__main__":
-    ONEPUSH = os.environ["ONEPUSH"]
+    ONEPUSH = os.getenv("ONEPUSH")
     #plustoken = os.getenv("plustoken")  # 推送加
     # 变量 USER（手机号）,PWD（密码）
-    username = os.environ["USER"]
-    password = os.environ["PWD"]
+    username = os.getenv("USER")
+    password = os.getenv("PWD")
     main(username, password)
