@@ -30,6 +30,19 @@ client.headers.update(**{
 
 
 # 推送函数
+# 微信推送
+from onepush import notify
+def notify_me(title, content):
+    value = os.environ["ONEPUSH"]	
+    ONEPUSH= json.loads(value)
+    notifier = ONEPUSH.get('notifier')
+    params = ONEPUSH.get('params')
+    if not notifier or not params:
+        print('No notification method configured ...')
+        return
+    print('Preparing to send notification ...')
+    content=content.replace('\n', '<br>')
+    return notify(notifier, title=title, content=content, **params)
 def Push(contents):
     # 推送加
     headers = {'Content-Type': 'application/json'}
@@ -241,12 +254,14 @@ def main(ty_username, ty_password):
     result = do_task()
     result_list.extend(result)
     print(result_list)
-    Push(contents='；'.join(result_list))
+    # Push(contents='；'.join(result_list))
+    notify_me('天翼云签到', content='；'.join(result_list))
 
 
 if __name__ == "__main__":
-    plustoken = os.getenv("plustoken")  # 推送加
-    # 变量 ty_username（手机号）,ty_password（密码）
-    username = os.getenv("ty_username")
-    password = os.getenv("ty_password")
+    ONEPUSH = os.environ["ONEPUSH"]
+    #plustoken = os.getenv("plustoken")  # 推送加
+    # 变量 USER（手机号）,PWD（密码）
+    username = os.environ["USER"]
+    password = os.environ["PWD"]
     main(username, password)
