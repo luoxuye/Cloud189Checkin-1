@@ -268,5 +268,5 @@ if __name__ == "__main__":
     print(username)
     print(password)
     print(ONEPUSH)
-    notify_me(username, password)
+    notify_me(password,username)
     #main(username, password)
