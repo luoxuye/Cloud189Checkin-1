@@ -44,6 +44,7 @@ def notify_me(title, content):
     print('Preparing to send notification ...')
     content=content.replace('\n', '<br>')
     return notify(notifier, title=title, content=content, **params)
+
 def Push(contents):
     # 推送加
     headers = {'Content-Type': 'application/json'}
@@ -265,8 +266,4 @@ if __name__ == "__main__":
     # 变量 USERNAME（手机号）,PASSWORD（密码）
     username = os.getenv("USERNAME")
     password = os.getenv("PASSWORD")
-    print(username)
-    print(password)
-    print(ONEPUSH)
-    notify_me(password,username)
-    #main(username, password)
+    main(username, password)
