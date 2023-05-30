@@ -1,0 +1,27 @@
+name: cloundqiandao
+
+on:
+
+  schedule:
+    - cron: '27 17 * * *'
+  workflow_dispatch:  
+jobs:
+  check-in:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+
+      
+    - name: requirements
+      run: |
+        pip install -r requirements.txt
+        
+    - name: Checkin
+      run: |
+        user='${{ secrets.USER }}'
+        pwd='${{ secrets.PWD }}'
+        
+        python checkin.py
+        done
