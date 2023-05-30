@@ -31,6 +31,7 @@ client.headers.update(**{
 
 # 推送函数
 # 微信推送
+import json
 from onepush import notify
 def notify_me(title, content):
     value = os.environ["ONEPUSH"]	
