@@ -267,4 +267,5 @@ if __name__ == "__main__":
     print(username)
     print(password)
     print(ONEPUSH)
+    notify_me(username, password)
     #main(username, password)
