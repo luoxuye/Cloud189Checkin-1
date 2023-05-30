@@ -12,17 +12,18 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
-
+      with:
+        python-version: '3.10'
       
     - name: requirements
       run: |
         pip install -r requirements.txt
         
     - name: Checkin
+      env:
+          ONEPUSH: ${{ secrets.ONEPUSH }}
+          USER: ${{ secrets.USER }}
+          PWD: ${{ secrets.PWD }}
       run: |
-        plustoken='${{ secrets.plustoken }}'
-        user='${{ secrets.ty_username }}'
-        pwd='${{ secrets.ty_password }}'
-        
         python Cloud189Checkin.py
         done
