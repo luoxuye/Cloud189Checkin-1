@@ -23,10 +23,6 @@ jobs:
         pip install -r requirements.txt
         
     - name: Checkin
-      env:
-          ONEPUSH: ${{ secrets.ONEPUSH }}
-          USER: ${{ secrets.USER }}
-          PWD: ${{ secrets.PWD }}
       run: |
         python Cloud189Checkin.py
 
